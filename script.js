@@ -36,7 +36,7 @@ function calcTerreno() {
 
     largura = Number(prompt('Digite a largura do terreno'));
 
-    comprimento = Number(prompt('Digite o comprimento do terreno'))
+    comprimento = Number(prompt('Digite o comprimento do terreno'));
 
     area = largura * comprimento
 
@@ -69,7 +69,7 @@ function calcPago() {
 
     total = litros * 5.80
 
-    alert(' Valor total a pagar ' + total)
+    alert(' Valor total a pagar ' + total);
 
 }
 
@@ -85,7 +85,7 @@ function calcPao() {
 
     total =
 
-        alert('Valor total a pagar ' + total)
+        alert('Valor total a pagar ' + total);
 
 }
 /* 
@@ -111,12 +111,12 @@ function verHab() {
 
     if (idade >= 18) {
 
-        alert('Apto para tirar habilitação')
+        alert('Apto para tirar habilitação');
     }
 
     if (idade < 18) {
 
-        alert('Não está apto para tirar habilitação')
+        alert('Não está apto para tirar habilitação');
     }
 }
 
@@ -129,7 +129,7 @@ function verHab() {
 
     if (idade >= 18) {
 
-        alert('Apto para tirar habilitação')
+        alert('Apto para tirar habilitação');
 
     }else{
         alert('Não está apto para tirar habilitação')
@@ -200,13 +200,13 @@ function calcFeira() {
 
     } else {
         total = morangokg * 2.50
-    } 
-
-    if ( qtdkg > 8 || total > 25){
-        total = total - (total * 10/100)
     }
 
-    alert('A quantidade de kg comprados foi de ' +qtdkg+ ' e o valor total foi de ' +total)
+    if (qtdkg > 8 || total > 25) {
+        total = total - (total * 10 / 100)
+    }
+
+    alert('A quantidade de kg comprados foi de ' + qtdkg + ' e o valor total foi de ' + total);
 
     /* codigo simplificado  */
     /* if (macaskg > 5 || morangokg)>5 
@@ -216,7 +216,117 @@ function calcFeira() {
             total = (macakg * 1.8) + (morangokg * 2.5);
         }
     */
+}
+
+/* calcFeira() */
+
+function escola() {
+    let media;
+
+    media = Number(prompt('Digite a média do aluno'));
+    /* if= Si */
+    if (media < 5) {
+        alert('Conceito D')
+
+        /* else if= else:senão if: Si. Usa quando tem mais de duas opçoes a serem verificada */
+    } else if (media >= 5 && media < 7) {
+        alert('Conceito C')
+    }
+    if (media >= 7 && media < 9) {
+        alert('Conceito B');
+
+    } else if (media >= 9 && media <= 10) {
+        alert('Conceito A')
+    }
+
+}
+/* escola() */
+
+function calcImc() {
+
+    let altura, peso, imc;
+
+    altura = Number(prompt('Digite sua altura'));
+
+    peso = Number(prompt('Digite seu peso'));
+
+    imc = peso / (altura * altura);
+
+    /* só vai entrar no if se for verdeiro se tiver acontecendo, senão entrará no else */
+    if (imc < 18.5) {
+        alert('Abaixo do peso')
+        /* tudo que for falso */
+    } else if (imc >= 18.5 && imc < 25) {
+        alert('Peso Normal')
+        /*  */
+    } else if (imc >= 25 && imc < 30) {
+        alert('Acima do peso')
+        /* }else{
+            alert('Obeso')  
+        } */
+    } else if (imc >= 30) {
+        alert('Obeso')
+    }
+}
+
+/* calcImc() */
+
+function aluguelCarro() {
+    let categoria, km, diarias, total;
+
+    categoria = (prompt('Digite a categoria do carro'));
+
+    diarias = Number(prompt('Digite quantos dias o carro foi alugado'));
+
+    km = Number(prompt('Digite quantos km foram percorridos'));
+
+    if (categoria == 'popular') {
+        if (km > 100) {
+            total = km * 0.1
+        } else {
+            total = km * 0.2
+        }
+        total = total + diarias * 90
+    } else if (categoria == 'luxo') {
+        if (km > 200) {
+            total = km * 0.25
+        } else {
+            total = km * 0.3
+        }
+        total = total + diarias * 150
+    } else {
+        alert('Digite a categoria correta');
+    }
+
+    alert('O total a ser pago será de ' + total)
+}
+
+
+/* aluguelCarro() */
+
+function atividadeFisica() {
+    let pontos, horas, dinheiro;
+
+    horas = Number(prompt('Digite quantas horas você treinou no mês '))
+
+    if (horas < 10) {
+        pontos = horas * 2
+    } else if (horas >= 10 && horas < 20) {
+        pontos = horas * 5
+    } else if (horas > 20) {
+        pontos = horas * 10
+    }
+    dinheiro = pontos * 0.05
+
+    alert(dinheiro)
 
 }
 
-calcFeira()
+atividadeFisica();
+
+
+
+
+
+
+
