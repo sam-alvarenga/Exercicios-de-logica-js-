@@ -224,11 +224,11 @@ function escola() {
     let media;
 
     media = Number(prompt('Digite a média do aluno'));
-    /* if= Si */
+    /* if= Se */
     if (media < 5) {
         alert('Conceito D')
 
-        /* else if= else:senão if: Si. Usa quando tem mais de duas opçoes a serem verificada */
+        /* else if= else:senão if: Se. Usa quando tem mais de duas opçoes a serem verificada */
     } else if (media >= 5 && media < 7) {
         alert('Conceito C')
     }
@@ -258,7 +258,7 @@ function calcImc() {
         /* tudo que for falso */
     } else if (imc >= 18.5 && imc < 25) {
         alert('Peso Normal')
-        /*  */
+
     } else if (imc >= 25 && imc < 30) {
         alert('Acima do peso')
         /* }else{
@@ -322,11 +322,86 @@ function atividadeFisica() {
 
 }
 
-atividadeFisica();
+/* atividadeFisica(); */
+
+function calcIdade() {
+    let idade, somaIdades, contIdade;
+
+    somaIdades = 0;
+    contIdade = 1;
+    /* while = é enquanto é uma estrutura de repetição essencial que permite a execução contínua de um bloco de código enquanto uma condição estabelecida for verdadeira. */
+    
+    while (contIdade < 5) {
+        idade = Number(prompt('Digite sua idade ' + contIdade + 'º Pessoa '));
+        somaIdades = somaIdades + idade;
+        contIdade = contIdade + 1;
+
+    }
+
+    alert('A soma das idades é ' + somaIdades)
+}
+
+/* calcIdade(); */
 
 
+function calcMedia() {
+    let idade, somaIdades, contIdade, media;
 
+    somaIdades = 0;
+    contIdade = 0;
 
+    while (contIdade < 20) {
+        idade = Number(prompt('Digite sua idade '));
+        somaIdades = somaIdades + idade / 20
+        contIdade = contIdade + 1;
 
+    }
 
+    alert('A média é ' + media)
+}
 
+/* calcMedia(); */
+
+function idade() {
+    let idade, maiorIdade, contPessoas;
+
+    maiorIdade = 0
+    contPessoas = 1
+
+    while (contPessoas <= 5) {
+        idade = Number(prompt('Digite a ' + contPessoas + 'º idade '));
+        if (idade >= 18) {
+            /* maiorIdade = maiorIdade +1 */
+            /* maiorIdade += 1 */
+            maiorIdade++
+        }
+        /* contPessoas = contPessoas +1 */
+        /* contPessoas +=1 */
+        contPessoas++
+
+    }
+    alert('A quantidade de pessoas maiores de idade é ' + maiorIdade)
+}
+
+/* idade(); */
+
+function menorIdade() {
+    let idade, menorIdade, contIdade;
+
+    menorIdade = 0;
+    contIdade = 1;
+    idade = Number(prompt('Digite a ' + contIdade + 'º idade'));
+
+    menorIdade = idade;
+
+    while (contIdade <= 4) {
+        idade = Number(prompt('Digite a ' +contIdade+ 'º idade'));
+        if (idade < menorIdade) {
+            menorIdade = idade
+        }
+        /* ele recebendo mais ele e +1 */
+        contIdade++
+    }
+    alert ('A menor idade é ' +menorIdade)
+}
+menorIdade();
