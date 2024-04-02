@@ -404,4 +404,74 @@ function menorIdade() {
     }
     alert ('A menor idade é ' +menorIdade)
 }
-menorIdade();
+/* menorIdade(); */
+
+function racao() {
+    let pesoRacao, qtdGramas, total;
+    
+    pesoRacao = Number(prompt('Digite o peso do saco da ração'));
+    qtdGramas = Number(prompt('Digite a quantidade diária em gramas'));
+    total = pesoRacao - (qtdGramas*2) *5
+
+    alert("Sobraram " + total);    
+}
+
+/* racao() */
+
+function calcRacao() {
+    let pesoRacao, qtdGramas, total, qtGatos, qtDias;
+    
+    pesoRacao = Number(prompt('Digite o peso do saco da ração'));
+    qtdGramas = Number(prompt('Digite a quantidade diária em gramas'));
+    qtGatos = Number(prompt('Quantidade de gatos'));
+    qtDias = Number(prompt('Quantidade de dias'));
+
+    total = pesoRacao - (qtdGramas*qtGatos) *qtDias
+
+    alert("Sobraram " + total);    
+}
+
+/* CalcRacao() */
+
+function CalcuIdade() {
+    let idade, anoAtual, nascimento;
+
+    anoAtual = Number(prompt('Digite o ano atual'));
+    nascimento = Number(prompt('Digite seu ano de nascimento'));
+   
+    idade = anoAtual - nascimento
+
+
+    alert("sua idade é"  +idade);
+    
+}
+/* CalcuIdade() */
+
+function idade() {
+    let question, idade = 0, contIdade = 0, media = 0, somaIdade = 0, contMaior = 0;
+
+    question = (prompt("Deseja digitar informações de usuários? sim- para continuar e não-para parar"));
+
+    while (question == "sim") {
+        idade = Number(prompt("Digite uma idade"));
+        contIdade++ 
+        somaIdade += idade
+        
+        if (idade >=21){
+            contMaior++
+        } 
+        question = prompt("Deseja digitar informações de usuários? sim- para continuar e não- para parar")
+        
+    }
+    media = somaIdade / contIdade;
+
+    alert (" Foram digitadas " +contIdade+ " Idades, a média das idades digitadas é " +media+ " e " +contMaior+  " possuem 21 anos o mais. ");
+    
+}
+/* 
+idade() */
+
+function calcuValores() {
+    let 
+    
+}
