@@ -5,6 +5,7 @@
 == igual
 != diferente */
 
+/* variáveis que tem que ser zeradas todas que vão receber resultados de operções matemáticas. Ex: números, quantidades, somatórias, acumalativas */
 
 function algIdade() {
     console.log('teste');
@@ -18,7 +19,7 @@ function algIdade() {
 
     alert(nome);
 
-    /* string= é uma cadeia de caracteres ou seja uma sequencia texto podendo conter númros, letras e caracteres especiais */
+    /* string= é uma cadeia de caracteres ou seja uma sequencia texto podendo conter números, letras e caracteres especiais */
 
     /* Number= converter um valor para número */
     idade = Number(prompt('Digite sua idade'));
@@ -468,10 +469,97 @@ function idade() {
     alert (" Foram digitadas " +contIdade+ " Idades, a média das idades digitadas é " +media+ " e " +contMaior+  " possuem 21 anos o mais. ");
     
 }
-/* 
-idade() */
 
-function calcuValores() {
-    let 
-    
+/* idade() */
+
+function calcValue(){
+    let question, values, contValues, somaValues, medValues, menorValue
+    contValues = 0
+    somaValues = 0
+    menorValue = 0
+    question = prompt('Deseja digitar valores? sim-para continuar e não-para continuar')
+    while(question=='sim'){
+        values = Number(prompt('Digite aqui seu valor:'))
+        contValues++
+        somaValues = somaValues+values
+        if(values<menorValue || menorValue==0){
+            menorValue = values
+        }
+        question = prompt('Deseja digitar valores? sim-para continuar e não-para continuar')
+    }
+    medValues = somaValues/contValues
+    alert('O somatório final dos valores foi '+somaValues+', enquanto sua média é de '+medValues+' E o menor valor foi '+menorValue)
 }
+
+/* calcValue() */
+
+/* function Formulario() {
+    let nome, idade, genero, idMaior, idMenor, pessoaNova, pessoaVelha;
+
+    question = prompt('Deseja digitar valores? sim-para continuar e não-para continuar');
+
+    while (question == "sim") {
+        nome = prompt("Digite seu nome");
+        idade = Number(prompt("Digite sua idade"));
+        genero = prompt("Digite seu genêro");
+
+        if (idade>idMaior) {
+            idMaior = idade;
+            pessoaVelha = nome;
+        }
+        if(idade<idMenor || idMenor == 0 && genero == 'f'){
+            idMenor = idade;
+            pessoaNova = nome; 
+        }
+        question = prompt('Deseja digitar valores? sim-para continuar e não-para continuar');
+    }
+    alert("O nome da pessoa mais velha é " +pve);
+    alert("O nome da mulher mais jovem é " +pessoaNova);
+}
+Formulario() */
+
+function lerIdades() {
+    let nome, idade = 0, genero, idMaior = 0, menor = 0, maisVelha =0 , mulherNova = 0, count = 0, soma = 0, qtdHomens = 0, qtdMulherMenor = 0;
+    let op = prompt('deseja cadastrar um usário? (s/n)');
+
+
+    while (op == 's' && op != 'n') {
+        /* cadastro de dados */
+        nome = prompt('Nome: ');
+        idade = Number (prompt('digite a idade: '));
+        genero = prompt('Gênero (M - Masculino / F - Femenino): ');
+
+        /* verificar qual o mais velho */
+        if (idade > idMaior) {
+            idMaior = idade;
+            maisVelha = nome;
+        }
+        /* verificar a mulher mais jovem e mostrar */
+        if (idade < menor || menor == 0 && genero == '') {
+            menor = idade;
+            mulherNova = nome;
+        }
+        /* Quantos homens maiores que 30  */
+        if (idade > 30 && genero == 'M'){
+            qtdHomens++;
+        
+        }
+        /* Quantas mulheres */
+        if(idade < 18 || qtdMulherMenor == 0 && genero == 'F' ){
+            qtdMulherMenor++;
+        }
+        count++;
+        soma+=idade;
+
+        op = prompt('deseja cadastrar um usário?(s/n)');
+    }
+    /* média */
+    let media = soma / count;
+
+    alert('O nome da pessoa mais velha é: ' + maisVelha);
+    alert('O nome da pessoa mulher mais jovem é: ' + mulherNova);
+    alert('A média das pessoas:' + media.toFixed(2));
+    alert('Quantos homems com mais 30 ' + qtdHomens);
+    alert('Quantas mulheres tem menos de 18 anos: ' + qtdMulherMenor);
+}   
+lerIdades();
